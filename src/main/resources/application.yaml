@@ -1,0 +1,25 @@
+spring:
+  mvc:
+    log-request-details: true
+  kafka:
+    bootstrap-servers: "localhost:29092"
+    consumer:
+      group-id: "taskGroup"
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/postgres"
+    driverClassName: org.postgresql.Driver
+    username: "postgres"
+    password: "postgres"
+    hikari:
+      schema: "public"
+
+server:
+  servlet:
+    session:
+      timeout: "60s"
+    context-path: "/management"
+jwt:
+  secret: "4B4A314C6C696479456D2F39727A587272396478476F6B7836387238585A2F565A70332F5374363078742B3442473866677A79553230685779315762536737380D0A"
+  accessExpiration: 8640000
+  refreshExpiration: 43200000
+#debug: true
